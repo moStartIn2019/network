@@ -1,0 +1,17 @@
+主要 
+1.tcp => http,https,websocket
+2.udp
+3.ajax
+4.fetch
+5.跨域
+
+tcp: 三次握手，4次挥手
+https: http+ssl+certificate，aes + rsa
+ajax:XMLHttpRequest， 针对超时请求提前终止：xhr.abort(), 状态回调:xhr.onreadystatechange
+	xhr.readyState 的五种状态 ，上传进度回调：xhr.upload.onprogress
+fetch: 默认不带cookie，返回的数据需要json序列化，只有网络或者服务器错误才出发reject
+	mode: same-origin 不允许, cors: 支持 同域请求不需要后端cors支持， no-cors：用于跨域但服务器不带cors响应头
+GET/POST
+	POST数据格式为json时，会发送option预检请求，查看服务器情况，再发送真正的POST请求（firefox只发送一次）
+	GET存在2048字节的长度限制，浏览器和服务器都限制
+	GET编码只能是url编码
